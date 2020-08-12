@@ -3,7 +3,7 @@
 content_spinner/data/__pycache__/
 content_spinner/models/__pycache__/
 .DS_Store
-content_spinner/models/model_file/pentagram_model.pickle
+# content_spinner/models/model_file/pentagram_model.pickle
 content_spinner/data/cache
 notebooks/.ipynb_checkpoints
 .ipynb_checkpoints

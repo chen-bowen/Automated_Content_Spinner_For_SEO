@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "content_spinner"
+version = "1.0"
+description = "Application of NLP and Genetic Algorithm in content spinning"
+authors = ["Bowen"]
+
+[tool.poetry.dependencies]
+python = "~3.7"
+numpy = "*"
+pandas = "*"
+matplotlib = "*"
+beautifulsoup4="*"
+nltk = "*"
+sklearn = "*"
+lightgbm = "*"
+shap = "*"
+
+[tool.poetry.dev-dependencies]
+black = "==19.3b0"
+pytest = "*"

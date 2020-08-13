@@ -6,8 +6,6 @@ import nltk
 class ContentSpinner:
     """ Samples from the language model and generate the spinned word given surrounding context """
 
-    SPIN_PROBABILITY = 0.4
-
     def __init__(self):
         self.language_model = PentagramModel().pentagrams_probabilities
 
@@ -42,11 +40,7 @@ class ContentSpinner:
                     tokenized_content[i + 4],
                 )
                 # randomly spin content token if the probability is greater than spin probability
-                spinned_word = (
-                    self.predict_word(context, tokenized_content[i + 2])
-                    if np.random.random() > self.SPIN_PROBABILITY
-                    else tokenized_content[i + 2]
-                )
+                spinned_word = self.predict_word(context, tokenized_content[i + 2])
                 spinned_tokenized_content.append(spinned_word)
             # save the spinned content
             spinned_content.append(

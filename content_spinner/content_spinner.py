@@ -6,7 +6,7 @@ import nltk
 class ContentSpinner:
     """ Samples from the language model and generate the spinned word given surrounding context """
 
-    SPIN_PROBABILITY = 0.6
+    SPIN_PROBABILITY = 0.4
 
     def __init__(self):
         self.language_model = PentagramModel().pentagrams_probabilities

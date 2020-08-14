@@ -1,6 +1,6 @@
 # Automated Content Spinner With NLP
 
-Using pentagram as the language model to automatically spin content for search engine optimizations
+As most of the marketers would want more traffic to their webisites, occupying the first page of the search engine has become crucial to the success of the business. It used to be a easy task as marketers only need to copy the same content multiple times. However, since modern search engines are smart enough to recognize the same content, we will need some adaptations on the automation tools to generate the content. In this project, we will use pentagram as the language model to automatically spin content for search engine optimizations.
 
 ## Environment Setup
 
@@ -33,4 +33,14 @@ The class uses the tokenized reviews and produced the probabilities of each indi
 
 ```
 pentagram_probabilities = {("word 1", "word 2", "word3", "word 4"):{"word 5": p1, "word 6": p2, ...}, ...}
+```
+
+### ContentSpinner
+
+The class that used the pentagram model to sample the middle word according to surrounding context. The class has a method that takes a list of orginal content and generate a list of spinned content.
+
+```python
+
+ContentSpinnner().generate_spinned_content(content_list)
+
 ```

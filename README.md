@@ -1,6 +1,6 @@
 # Automated Content Spinner With NLP
 
-As most of the marketers would want more traffic to their webisites, occupying the first page of the search engine has become crucial to the success of the business. It used to be a easy task as marketers only need to copy the same content multiple times. However, since modern search engines are smart enough to recognize the same content, we will need some adaptations on the automation tools to generate the content. In this project, we will use pentagram as the language model to automatically spin content for search engine optimizations. The project is originated from a miniproject from the (Lazy Programmer's Python NLP course)[https://www.udemy.com/course/data-science-natural-language-processing-in-python/]
+As most of the marketers would want more traffic to their webisites, occupying the first page of the search engine has become crucial to the success of the business. It used to be a easy task as marketers only need to copy the same content multiple times. However, since modern search engines are smart enough to recognize the same content, we will need some adaptations on the automation tools to generate the content. In this project, we will use pentagram as the language model to automatically spin content for search engine optimizations. The project is originated from a miniproject from the [Lazy Programmer's Python NLP course](https://www.udemy.com/course/data-science-natural-language-processing-in-python/)
 
 ## Environment Setup
 

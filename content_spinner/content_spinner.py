@@ -14,9 +14,16 @@ class ContentSpinner:
         # get all possiple words and their corresponding probability distribution
         if context not in self.language_model.keys():
             return original_word
-
-        possible_words = list(self.language_model[context].keys())
-        sample_distribution = list(self.language_model[context].values())
+        # exclude the original context
+        context_dist = {
+            word: prob
+            for word, prob in self.language_model[context].items()
+            if word != original_word
+        }
+        possible_words = list(context_dist.keys())
+        sample_distribution = [
+            prob / sum(context_dist.values()) for prob in context_dist.values()
+        ]
 
         # sample the predicted word according to their distribution
         predicted_word = np.random.choice(a=possible_words, p=sample_distribution)
@@ -28,8 +35,8 @@ class ContentSpinner:
         for content in content_list:
             # tokenize every content string
             tokenized_content = nltk.tokenize.word_tokenize(content)
-            # initialize the spinned tokenized content with the first word
-            spinned_tokenized_content = [tokenized_content[0]]
+            # initialize the spinned tokenized content with the first two words
+            spinned_tokenized_content = tokenized_content[:2]
 
             for i in range(len(tokenized_content) - 4):
                 # get the context words
@@ -39,9 +46,15 @@ class ContentSpinner:
                     tokenized_content[i + 3],
                     tokenized_content[i + 4],
                 )
-                # randomly spin content token if the probability is greater than spin probability
+                # spin content token
                 spinned_word = self.predict_word(context, tokenized_content[i + 2])
                 spinned_tokenized_content.append(spinned_word)
+
+            # add back the last two words
+            spinned_tokenized_content += [
+                tokenized_content[i + 3],
+                tokenized_content[i + 4],
+            ]
             # save the spinned content
             spinned_content.append(
                 " ".join(spinned_tokenized_content)
